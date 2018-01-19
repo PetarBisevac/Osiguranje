@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if(!isset($_SESSION['ID'])){
+  $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+  //echo $_SERVER['REQUEST_URI'];
+  header('location: index.php');
+}
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>

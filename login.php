@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-$conn = mysqli_connect("localhost", "id4343270_root", "aurumit", "id4343270_osiguranje");
+$conn = mysqli_connect("localhost", "root", "", "osiguranje");
 if (!$conn) {
   die("Connection Failed: ".mysqli_connect_error());
 }
@@ -11,7 +11,7 @@ if (!$conn) {
      $sql =("SELECT * FROM korisnici WHERE Ime = '$Ime' AND Sifra = '$pass' limit 1");
      $result = $conn->query($sql);
      if (!$row =$result->fetch_assoc()){
-        echo "Pogresna sifra!";
+        //echo "Pogresna sifra!";
      } else {
         $_SESSION['ID'] = $row['ID'];
         $IDkorisnik= $_SESSION['ID'];
