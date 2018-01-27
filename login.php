@@ -1,24 +1,35 @@
 <?php
-error_reporting(0);
-session_start();
-$conn = mysqli_connect("localhost", "id4343270_root", "petar123", "id4343270_osiguranje"); 
-if (!$conn) {
-  die("Connection Failed: ".mysqli_connect_error());
+error_reporting(0);//Iskljucivanje prikazivanje gresaka
+session_start();//Pocetak sesije
+$conn = mysqli_connect("localhost", "root", "", "novoosiguranje");//Konektovanje na bazu podataka
+if (!$conn) {//Ispitivanje konekcije
+  die("Connection Failed: ".mysqli_connect_error());//Ako nije uspela izbaci poruku
 }
-     $Ime = $_POST['ime'];
-     $pass =$_POST['sifra'];
+     $Ime = $_POST['username'];//Upisivanje u promenljivu podatke Imena i Prezimena
+     $Pass =$_POST['password'];//Upisivanje u promenljivu podatke sifre
 
-     $sql =("SELECT * FROM korisnici WHERE Ime = '$Ime' AND Sifra = '$pass' limit 1");
-     $result = $conn->query($sql);
-     if (!$row =$result->fetch_assoc()){
-        //echo "Pogresna sifra!";
+     $sql =("SELECT * FROM users WHERE username = '$Ime' AND password = '$Pass' limit 1");//Stvaranje sintakse za sql upit da se poklope Ime i prezime, sifra
+     $result = $conn->query($sql);//Pretvaranje u sql upit pomocu funkcije query()
+     if (!$row =$result->fetch_assoc()){//Posto se radi o nizu potrebno je fetchovanje
+      echo "Ne postoji korisnik sa unesenim vrednostima";
      } else {
-        $_SESSION['ID'] = $row['ID'];
-        $IDkorisnik= $_SESSION['ID'];
-        if ($_SESSION['ID']=="1") {
-          header("Location: manager.php");
-        }else {
-          header("Location: agent.php");
+
+      if (!isset($_SESSION['submit'])) {
+        if ($_POST['password'] == $row['password']) {
+          if ($row['admins'] != "0") {
+            $_SESSION['loggedinManager'] = TRUE;
+            echo "redirectHM";
+          }else {
+            if ($row['Ban'] != "0") {
+              echo "Vas nalog je deaktiviran, za vise informacija kontaktirajte menadzera";
+            }else {
+              $_SESSION['loggedinAgent'] = TRUE;
+              echo "redirectA";
+            }
+          }
         }
+
+      }
+
    }
 ?>
