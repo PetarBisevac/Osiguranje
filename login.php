@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "osiguranje");
+$conn = mysqli_connect("localhost", "id4343270_root", "petar123", "id4343270_osiguranje"); 
 if (!$conn) {
   die("Connection Failed: ".mysqli_connect_error());
 }
