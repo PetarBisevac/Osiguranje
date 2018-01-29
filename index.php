@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedinManager'])) {
+    $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+    header('location: homeManager.php');
+}elseif (isset($_SESSION['loggedinAgent'])) {
+  $_SESSION['redirectURL'] = $_SERVER['REQUEST_URI'];
+  header('location: agent.php');
+}
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">

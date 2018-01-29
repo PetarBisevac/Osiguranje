@@ -13,7 +13,7 @@ if (!$conn) {//Ispitivanje konekcije
      if (!$row =$result->fetch_assoc()){//Posto se radi o nizu potrebno je fetchovanje
       echo "Ne postoji korisnik sa unesenim vrednostima";
      } else {
-
+      $_SESSION['index'] = TRUE;
       if (!isset($_SESSION['submit'])) {
         if ($_POST['password'] == $row['password']) {
           if ($row['admins'] != "0") {
