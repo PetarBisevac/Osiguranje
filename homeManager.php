@@ -418,10 +418,10 @@ $(selectors.reset).on('click', function (e) {
 
                     <div class="form-group">
                       <label for="input-search" class="sr-only">Search Tree:</label>
-                      <input  type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+                      <input  type="input" class="form-control" id="input-search" placeholder="Kucajte da pretrazite..." value="">
                     </div>
-                    <button type="button" class="btn btn-success" id="btn-search">Search</button>
-                    <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+                    <button type="button" class="btn btn-success" id="btn-search">Pretraga</button>
+                    <button type="button" class="btn btn-default" id="btn-clear-search">Obrisi</button>
 
         <h2 align="center" style="color:white;font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;">STABLO KLIJENATA </h2>
     </div>

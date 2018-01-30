@@ -7,6 +7,8 @@ if (!$conn) {//Provera konekcije ako nije uspesna
 	$Ime = $_POST['fullname'];//Upisivanje u promenljivu podatke Imena i Prezimena
 	$Phone =$_POST['phoneNumber'];//Upisivanje u promenljivu podatke broja
   $referenca = $_POST['dropdown'];//Upisivanje u promenljivu podatke dropdown
+  $opstina = $_POST['dropdownopstina'];//Upisivanje u promenljivu podatke dropdown
+  $adresa = $_POST['adresa'];
 
 
   //Koji korisnik je u pitanju
@@ -23,7 +25,7 @@ if (!$conn) {//Provera konekcije ako nije uspesna
 
 
   //Ubacivanje agenata
- 	$sql = "INSERT INTO clients (clients, phoneNumber, clientsPN, reference, punareferenca) VALUES ('$Ime', '$Phone', '".$Ime."  ".$Phone."', '$referencaDVA', '$punareferenca')";//Stvaranje sintakse za sql upit da se upisu novi korisnici
+ 	$sql = "INSERT INTO clients (clients, phoneNumber, clientsPN, adresa, opstina, reference, punareferenca) VALUES ('$Ime', '$Phone', '".$Ime."  ".$Phone." ".$opstina."', '$adresa', '$opstina', '$referencaDVA', '$punareferenca')";//Stvaranje sintakse za sql upit da se upisu novi korisnici
   if ($conn->query($sql) === TRUE) {
     $last_id = $conn->insert_id;//Uzimanje ID-a poslednjeg unetog korisnika
     //echo "Klijent je uspesno dodat, referenca: $clientsIme";
@@ -63,7 +65,9 @@ if (!$conn) {//Provera konekcije ako nije uspesna
       $dva = $rowBrPreporucenih[$i]['clients'];
       $tri = $rowBrPreporucenih[$i]['phoneNumber'];
       $cetiri = $rowBrPreporucenih[$i]['ID'];
-      $spojeno = $jedanstring." ".$dva.$tri;
+      $pet = $rowBrPreporucenih[$i]['adresa'];
+      $sest = $rowBrPreporucenih[$i]['opstina'];
+      $spojeno = $jedanstring." ".$dva." ".$tri." ".$pet." ".$sest;
       $update2= ("UPDATE clients SET clientsPN='$spojeno' WHERE ID = '$cetiri'");
       $resultUPDATEClients =$conn->query($update2);//Pretvaranje sintake $sqldva u sql upit
       $i++;

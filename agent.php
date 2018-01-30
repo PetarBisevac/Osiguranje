@@ -73,6 +73,7 @@ if (!isset($_SESSION['loggedinAgent'])) {
   var x;
   x = document.getElementById("phoneNumber").value;
   y = document.getElementById("fullname").value;
+  z = document.getElementById("adresa").value;
   if ((x == "") || (y == "")) {
       alert("Ne smete ostaviti prazno polje");
       return false;
@@ -90,6 +91,7 @@ if (!isset($_SESSION['loggedinAgent'])) {
      <form action = "signUpClients.php" id="frmBox"  method = "POST" onsubmit="return formSubmit();"><!-- Napravljena forma cija je akcija da preusmeri podatke na signup.php skriptu -->
        <input type="text" name="fullname" id="fullname"  placeholder="Ime i prezime klijenta" style="color:black;"><!-- Input polje za unos imena i prezimena -->
        <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Broj telefona"  style="color:black;" onkeypress='validate(event)'><!-- Input polje za unos sifre -->
+       <input type="text" name="adresa" id="adresa" placeholder="Adresa klijenta"  style="color:black; width:500px">
        <input type="submit" name="dodaj" value="Dodaj klijenta" onClick="return empty()" style="cursor: pointer; color:black; margin-top: 37px;"><br><br><br><!-- Dugme za prosledjivanje podataka  -->
        <div class="container">
          <div class="row">
@@ -100,6 +102,16 @@ if (!isset($_SESSION['loggedinAgent'])) {
                  $sql = mysqli_query($connection, "SELECT clientsPN FROM clients");
                  while ($row = $sql->fetch_assoc()){
                  echo "<option value=\"".$row['clientsPN']."\">" . $row['clientsPN'] . "</option>";
+                 }
+             ?>
+           </select>
+           <select name="dropdownopstina" class="selectpicker" data-show-subtext="true" data-live-search="true">
+            <option>Opstina</option>
+             <?php
+                 $connection = new mysqli("localhost", "root", "","novoosiguranje");
+                 $sql = mysqli_query($connection, "SELECT opstina FROM bgopstine");
+                 while ($row = $sql->fetch_assoc()){
+                 echo "<option value=\"".$row['opstina']."\">" . $row['opstina'] . "</option>";
                  }
              ?>
            </select>

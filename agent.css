@@ -5,7 +5,8 @@ body, html {
   background-image: url(img/background.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 1000px; }
 
 .opisForme {
   position: absolute;
@@ -56,19 +57,18 @@ body, html {
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
-  border: none;
   text-align: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 
 .bootstrap-select {
-  position: absolute !important;
-  z-index: 999 !important;
-  top: 0 !important;
-  left: 50% !important;
-  width: 36em !important;
-  margin-top: 3.5em !important;
-  margin-left: -18em !important;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+  width: 18em !important; }
+
+.container {
+  width: 60em !important;
+  position: absolute;
+  top: 22.3%;
+  left: -10%; }
 
 .message {
   position: absolute;
