@@ -74,7 +74,7 @@ if (!isset($_SESSION['loggedinAgent'])) {
   x = document.getElementById("phoneNumber").value;
   y = document.getElementById("fullname").value;
   z = document.getElementById("adresa").value;
-  if ((x == "") || (y == "")) {
+  if ((x == "") || (y == "") || (z == "")) {
       alert("Ne smete ostaviti prazno polje");
       return false;
   };

@@ -27,7 +27,7 @@ if (isset($_SESSION['loggedinManager'])) {
               if (response.match(/redirectHM/)) {
                 window.location.replace('homeManager.php');
               }else if (response.match(/redirectA/)) {
-                window.location.replace('Agent.php');
+                window.location.replace('agent.php');
               }else {
                 $('#message').html(response);
               }
