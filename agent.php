@@ -98,7 +98,7 @@ if (!isset($_SESSION['loggedinAgent'])) {
            <select name="dropdown" class="selectpicker" data-show-subtext="true" data-live-search="true">
             <option>Dodaj referencu</option>
              <?php
-                 $connection = new mysqli("localhost", "root", "","novoosiguranje");
+                 $connection = new mysqli("localhost", "id4356245_root", "petar123","id4356245_osiguranje");
                  $sql = mysqli_query($connection, "SELECT clientsPN FROM clients");
                  while ($row = $sql->fetch_assoc()){
                  echo "<option value=\"".$row['clientsPN']."\">" . $row['clientsPN'] . "</option>";
@@ -108,7 +108,7 @@ if (!isset($_SESSION['loggedinAgent'])) {
            <select name="dropdownopstina" class="selectpicker" data-show-subtext="true" data-live-search="true">
             <option>Opstina</option>
              <?php
-                 $connection = new mysqli("localhost", "root", "","novoosiguranje");
+                 $connection = new mysqli("localhost", "id4356245_root", "petar123","id4356245_osiguranje");
                  $sql = mysqli_query($connection, "SELECT opstina FROM bgopstine");
                  while ($row = $sql->fetch_assoc()){
                  echo "<option value=\"".$row['opstina']."\">" . $row['opstina'] . "</option>";

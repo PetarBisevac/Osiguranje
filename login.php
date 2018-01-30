@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);//Iskljucivanje prikazivanje gresaka
 session_start();//Pocetak sesije
-$conn = mysqli_connect("localhost", "root", "", "novoosiguranje");//Konektovanje na bazu podataka
+$conn = mysqli_connect("localhost", "id4356245_root", "petar123", "id4356245_osiguranje");//Konektovanje na bazu podataka
 if (!$conn) {//Ispitivanje konekcije
   die("Connection Failed: ".mysqli_connect_error());//Ako nije uspela izbaci poruku
 }

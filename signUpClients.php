@@ -1,6 +1,6 @@
 <?php //Skripta za upis agenata
 
-$conn = mysqli_connect("localhost", "root", "", "novoosiguranje");
+$conn = mysqli_connect("localhost", "id4356245_root", "petar123", "id4356245_osiguranje");
 if (!$conn) {//Provera konekcije ako nije uspesna
   echo "Ne uspesna konekcija sa bazom";//Objavi ovu poruku
 }

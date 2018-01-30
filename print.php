@@ -1,6 +1,6 @@
 <?php
 //fetch.php
-$conn = mysqli_connect("localhost", "root", "", "novoosiguranje");
+$conn = mysqli_connect("localhost", "id4356245_root", "petar123", "id4356245_osiguranje");
 if (!$conn) {
   die("Connection Failed: ".mysqli_connect_error());
 }

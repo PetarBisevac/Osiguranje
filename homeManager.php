@@ -336,7 +336,7 @@ $(selectors.reset).on('click', function (e) {
 
                 <option>Agenti</option>
                  <?php
-                     $connection = new mysqli("localhost", "root", "","novoosiguranje");
+                     $connection = new mysqli("localhost", "id4356245_root", "petar123","id4356245_osiguranje");
                      $sql = mysqli_query($connection, "SELECT users, username FROM users");
                      while ($row = $sql->fetch_assoc()){
                      echo "<option value=\"".$row['username']."\">" . $row['users']. " ". $row['username'] . "</option>";
@@ -388,7 +388,7 @@ $(selectors.reset).on('click', function (e) {
 
                <option>Agenti</option>
                 <?php
-                    $connection = new mysqli("localhost", "root", "","novoosiguranje");
+                    $connection = new mysqli("localhost", "id4356245_root", "petar123","id4356245_osiguranje");
                     $sql = mysqli_query($connection, "SELECT users, username FROM users");
                     while ($row = $sql->fetch_assoc()){
                     echo "<option value=\"".$row['username']."\">" . $row['users']. " ". $row['username'] . "</option>";
